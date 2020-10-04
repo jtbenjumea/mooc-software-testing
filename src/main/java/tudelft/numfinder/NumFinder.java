@@ -1,5 +1,7 @@
 package tudelft.numfinder;
 
+import java.util.Objects;
+
 public class NumFinder {
     private int smallest = Integer.MAX_VALUE;
     private int largest = Integer.MIN_VALUE;
@@ -7,9 +9,12 @@ public class NumFinder {
     public void find(int[] nums) {
         for(int n : nums) {
 
+            if (Objects.equals(n, null))
+                return;
+
             if(n < smallest)
                 smallest = n;
-            else if (n > largest)
+            if (n > largest)
                 largest = n;
 
         }
